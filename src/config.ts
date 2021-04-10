@@ -92,7 +92,7 @@ if (isLocal && typeof local.postgresSsl === 'boolean') {
     }
 }
 export const postgres = {
-    connectionString: getCfg(DATABASE_URL),
+    connectionString: getCfg('DATABASE_URL'),
     ssl: ssl,
     max: (isLocal ? local.postgresMax : ~~getCfg('POSTGRES_MAX')) || 5,
     idleTimeoutMillis: (isLocal ? local.postgresIdleTimeoutMills : ~~getCfg('POSTGRES_IDLETIMEOUTMILLS')) || 4 * this.HOUR,
